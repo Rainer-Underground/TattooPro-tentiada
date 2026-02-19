@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tattoo Ink Mixer Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar glass">
+            <div class="logo">
+                <i data-lucide="droplet" class="icon-primary"></i>
+                <span class="logo-text">Tattoo<span>Pro</span></span>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-page="mixer" title="Misturador">
+                    <i data-lucide="palette"></i>
+                    <span>Misturador</span>
+                </button>
+                <button class="nav-item" data-page="study" title="Estudo">
+                    <i data-lucide="book-open"></i>
+                    <span>Estudo</span>
+                </button>
+                <button class="nav-item" data-page="budget" title="Orçamentos">
+                    <i data-lucide="calculator"></i>
+                    <span>Orçamentos</span>
+                </button>
+                <button class="nav-item" data-page="clients" title="Clientes">
+                    <i data-lucide="users"></i>
+                    <span>Clientes</span>
+                </button>
+                <button class="nav-item" data-page="inventory" title="Estoque">
+                    <i data-lucide="package"></i>
+                    <span>Estoque</span>
+                    <span id="low-stock-badge" class="badge hidden">0</span>
+                </button>
+                <button class="nav-item" data-page="schedule" title="Agenda">
+                    <i data-lucide="calendar"></i>
+                    <span>Agenda</span>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="theme-toggle">
+                    <i data-lucide="moon"></i>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1 id="page-title">Misturador de Tintas</h1>
+                <div class="user-profile">
+                    <div class="avatar glass">
+                        <i data-lucide="user"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div id="app-view" class="view-container">
+                <!-- Views will be injected here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirm-modal" class="modal hidden">
+        <div class="modal-content glass" style="max-width: 400px; text-align: center;">
+            <div class="modal-header" style="justify-content: center;">
+                <h3 id="confirm-title">Confirmar Ação</h3>
+            </div>
+            <p id="confirm-message" style="margin-bottom: 2rem; color: var(--text-muted);"></p>
+            <div class="modal-actions" style="justify-content: center;">
+                <button class="btn-secondary" id="confirm-cancel">Cancelar</button>
+                <button class="btn-primary" id="confirm-ok"
+                    style="background: var(--danger); color: white;">Excluir</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>
